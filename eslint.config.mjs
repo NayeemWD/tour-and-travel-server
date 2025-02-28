@@ -1,7 +1,7 @@
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import prettierPlugin from 'eslint-plugin-prettier'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -18,7 +18,8 @@ export default [
             'no-unused-expressions': 'error',
             'prefer-const': 'error',
             'no-console': 'warn',
+            'prettier/prettier': 'error', // Ensure Prettier formatting rules are enforced
         },
     },
-    eslintPluginPrettierRecommended,
+    prettierPlugin.configs.recommended, // Correct way to include eslint-plugin-prettier
 ]
